@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequalize');
-const sequalize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Game extends Model {}
 
@@ -22,7 +22,7 @@ Game.init(
         },
     },
     {
-        sequalize,
+        sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
