@@ -4,6 +4,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+const auth = require('./utils/auth');
 
 // Using express and giving a port
 const app = express();
