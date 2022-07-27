@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS Gamedeal_db;
+CREATE DATABASE Gamedeal_db;
