@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequalize');
+const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequalize = require('../config/connection');
+const sequelize = require('../config/connection');
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -44,7 +44,7 @@ User.init(
                 return updatedUserData;
             },
         },
-        sequalize,
+        sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
