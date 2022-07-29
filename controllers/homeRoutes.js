@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const res = require('express/lib/response')
 
 router.get('/', (req, res) => {
   res.render('homepage', {
@@ -22,3 +21,5 @@ router.get('/search', (req, res) => {
 router.get('/favorites', (req, res) => {
   res.render('favorites');
 });
+
+module.exports = router;

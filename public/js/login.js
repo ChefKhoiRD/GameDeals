@@ -8,12 +8,6 @@ const { request } = require('http');
 
 const app = express();
 
-app.use(session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
-}));
-
 app.use(express.json());
 app.app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'static')));
