@@ -17,7 +17,7 @@ User.init(
             autoIncrement: true,
         },
         email: {
-                type: DataTypes.String,
+                type: DataTypes.STRING,
                 allowNull: false,
                 unique: true,
                 validate: {

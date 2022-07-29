@@ -1,11 +1,10 @@
-const mysql = require('mysql');
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
-const { allowedNodeEnvironmentFlags } = require('process');
-const { resourceLimits } = require('worker_threads');
+// const { allowedNodeEnvironmentFlags } = require('process');
+// const { resourceLimits } = require('worker_threads');
 const { request } = require('http');
-const { response } = require('express');
+//const { response } = require('express');
 
 const app = express();
 
