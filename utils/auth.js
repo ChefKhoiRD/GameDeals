@@ -16,4 +16,3 @@ app.get('/logout', (req, res) => {
     return res.redirect('/');
 });
 
-app.post
