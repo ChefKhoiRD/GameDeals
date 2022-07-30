@@ -1,4 +1,4 @@
-const middleWare = (req, res, next) => {
+const middleWare = (req, res) => {
     if (!req.user) {
         return next();
     } else {
