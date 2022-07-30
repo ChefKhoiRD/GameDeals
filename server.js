@@ -21,6 +21,7 @@ const sess = {
     db: sequelize
     })
 };
+
 app.use(session(sess));
 
 // Handlebars
@@ -36,10 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 // Starting server with listening function
-app.listen(PORT, function (err) {
-    if(err) {
-        console.log('Error with starting server');
-    } else {
-        console.log('Listening at port' + PORT);
-    }
-});
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
+  });
+  
