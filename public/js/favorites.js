@@ -33,5 +33,5 @@ const destroyGameFavorite = async (event) => {
     }
 };
 
-document.querySelector('').addEventListener('click', newGameFavorite);
+document.querySelector('#addFavorite').addEventListener('click', newGameFavorite);
 document.querySelector('').addEventListener('click', destroyGameFavorite);
