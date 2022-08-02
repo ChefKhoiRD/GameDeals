@@ -21,7 +21,7 @@ User.init(
             allowNull: true,
         },
         email: {
-                type: DataTypes.String,
+                type: DataTypes.STRING,
                 allowNull: false,
                 unique: true,
                 validate: {
@@ -34,6 +34,13 @@ User.init(
             unique: true,
             validate: {
                 isEmail: true,
+            },
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              key: 'id',
             },
         },
     },
