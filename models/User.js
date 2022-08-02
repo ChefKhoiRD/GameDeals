@@ -16,6 +16,10 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        last_search: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
         email: {
                 type: DataTypes.STRING,
                 allowNull: false,
