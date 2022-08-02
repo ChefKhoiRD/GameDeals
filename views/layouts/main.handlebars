@@ -12,21 +12,29 @@
 <body class="bg-gray-200">
     <div>
         <header class="bg-slate-800">
+            {{#if logged_in}}
             <nav class="flex items-end justify-between text-gray-300 pb-4">
-                <div class="text-slate-800">helloooooooooooooo</div>
+                <div class="text-slate-800">helloooooooooooooooooo</div>
                 <h1 class="text-6xl ">
                     Game Deals
                 </h1>
+            {{else}} 
+              
+                <h1 class="flex justify-center text-gray-100 pb-4 text-6xl ">
+                    Game Deals
+                </h1>
+            {{/if}}
                 
                 {{#if logged_in}}
                 <div class="pr-3 text-lg">
-                <a href="/">Home</a>
-                <a href="/favorites">Favorites</a> |
-                <button class="btn" id="logout">Logout</button>
+                    <a href="/">Home</a>
+                    <a href="/favorites">Favorites</a> |
+                    <button class="btn" id="logout">Logout</button>
+                </div>
                 {{else}}
                 
                 {{/if}}
-                </div>
+                
             </nav>
         </header>
 
