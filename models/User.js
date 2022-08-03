@@ -33,13 +33,6 @@ User.init(
             allowNull: false,
             unique: true,
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'user',
-              key: 'id',
-            },
-        },
     },
     {
         hooks: {
