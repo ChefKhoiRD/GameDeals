@@ -1,3 +1,17 @@
+const generateCard = (game) => {
+    return `
+    <div>
+    <div>
+        <p>
+            <img ${game.thumb}>
+        </p>
+        <p>
+            <a href="/search/${game.id}">${game.title}></a>
+        </p>
+    </div>
+    </div>`
+}
+
 const searchTitle = async (event) => {
     event.preventDefault();
     console.log("Checkpoint");
@@ -5,6 +19,7 @@ const searchTitle = async (event) => {
     const gameTitle = document.querySelector('#game-title').value.trim();
 
     let gameArray = [];
+    let cardArray = [];
 
     try {
         const response = await fetch(`https://www.cheapshark.com/api/1.0/games?title=${gameTitle}&limit=6`)
@@ -22,9 +37,13 @@ const searchTitle = async (event) => {
             }
         }
 
-        const game = gameArray.map((game) => game.get({ plain: true }));
+        for (let i = 0; i < gameArray.length; i++) {
+            let newCard = generateCard(gameArray[i]);
+            cardArray.push(newCard);
+        }
 
-        game = Handlebars.compile(game);
+        $('#appendCard').append(cardArray);
+        
     } catch (err) {
         console.log(err);
     }

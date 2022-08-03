@@ -15,19 +15,10 @@
     </div>
 </div>
 
-{{#if games.length}}
-{{#each games as |game|}}
-<div>
-    <div>
-        <p>
-            <img {{game.thumb}}>
-        </p>
-        <p>
-            <a href="/search/{{game.id}}">{{game.title}}></a>
-        </p>
-    </div>
+
+<div id="appendCard">
+
 </div>
-{{/each}}
-{{/if}}
+
 
 <script src="./js/search.js"></script>
