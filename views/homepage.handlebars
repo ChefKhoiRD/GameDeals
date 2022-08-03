@@ -15,18 +15,10 @@
     </div>
 </div>
 
-{{#if games.length}}
-{{#each games as |game|}}
-<div class="flex flex-col items-center justify-center">
-    <img src="{{game.thumb}}"
-    class="p-1 border rounded object-scale-down h-20 w-20"
-    alt="thumbnail for game image">
-        
-    <div class="pb-5 text-4xl">
-        <a href="/search/{{game.id}}">{{game.title}}</a>
-    </div>
-</div>
-{{/each}}
-{{/if}}
+<div class="flex flex-col items-center justify-center" id="appendCard">
 
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 <script src="./js/search.js"></script>
