@@ -57,4 +57,14 @@ router.post('/logout', async (req, res) => {
     }
 });
 
+router.put('/', async (req, res) => {
+    const userData = await User.findOne({ where: { id: req.session.user_id }});
+    if (userData) {
+    const updated = await User.update({ last_search: req.body.last_search}, { where: { id: req.session.user_id }})
+    console.log(updated);
+    return res.json(updated);
+    }
+    return res.status(400).json({error: "failed"});
+})
+
 module.exports = router;

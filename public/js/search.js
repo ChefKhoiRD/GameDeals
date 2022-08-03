@@ -30,6 +30,25 @@ const searchTitle = async (event) => {
     }
 }
 
+const searchTitleFetch = async function(event) {
+    event.preventDefault();
+
+    const gameTitle = document.querySelector('#game-title').value.trim();
+
+    try {
+        var response = await fetch('/api/users', {
+            method: 'PUT',
+            body: JSON.stringify({ last_search: gameTitle}),
+            headers: {
+                'Content-Type': 'application/json',
+              },          
+        })
+        var data = response.json();
+        console.log(data);
+    } catch (err) {
+        console.log(err);
+    }
+}
 document
     .querySelector('#game-search')
-    .addEventListener('submit', searchTitle);
+    .addEventListener('submit', searchTitleFetch);
