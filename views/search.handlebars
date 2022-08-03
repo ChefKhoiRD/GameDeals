@@ -1,48 +1,38 @@
-<div class="row">
-    <div class="col">
-        <div>{{game.thumb}}</div>
-    </div>
+<div class="flex flex-col items-center justify-center">
     
-    <div class="col">
-        <h2>{{game.title}}</h2>
+    <img src="{{game.thumb}}"
+    class="p-1 bg-yellow-300 border rounded max-w-sm"
+    alt="thumbnail for game">
+    
+    <div class="pb-5 text-5xl">
+        <h2>game title</h2>
     </div>
-
-    <div class="col">
-        <button class="btn">Add to Favorites</button>
+    <div>
+        <button type='submint' class="bg-yellow-300 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded">Add to Favorites</button>
     </div>
 </div>
-    
-<div class="row">
-     <div class="col">   
-        <div>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <span>Steam</span>
-                        </td>
-                        <td>
-                            <span>{{game.steamPrice}}</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span>Humble Store</span>
-                        </td>
-                        <td>
-                            <span>{{game.humblePrice}}</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span>GOG</span>
-                        </td>
-                        <td>
-                            <span>{{game.gogPrice}}</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+
+<div class="flex justify-center p-4">    
+    <table class="table-auto w-2/5 h-40 border-spacing-3 border border-4 border-yellow-300">
+        <thead>
+            <tr>
+                <th class="font-bold p-2 border-b text-left bg-blue-800 text-white">Store</th>
+                <th class="font-bold p-2 border-b text-left bg-blue-800 text-white">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="font-bold py-2 px-4 border-b border-1 text-left hover:bg-white">
+                <td>Steam</td>
+                <td>{{game.steamPrice}}</td>
+            </tr>
+            <tr class="font-bold py-2 px-4 border-b border-1 text-left hover:bg-white">
+                <td >Humble Store</td>
+                <td{{game.humblePrice}}</td>
+            </tr>
+            <tr class="font-bold py-2 px-4 border-b border-1 text-left hover:bg-white">
+                <td>GOG</td>
+                <td>{{game.gogPrice}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

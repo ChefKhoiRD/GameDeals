@@ -1,14 +1,11 @@
 const generateCard = (game) => {
     return `
-    <div>
-    <div>
-        <p>
-            <img src='${game.thumb}'>
-        </p>
-        <p>
-            <a href="/search/${game.id}">${game.gtitle}></a>
-        </p>
-    </div>
+    <img src="${game.thumb}"
+    class="p-1 border rounded object-scale-down h-20 w-20"
+    alt="thumbnail for game image">
+        
+    <div class="pb-5 text-4xl">
+        <a href="/search/${game.id}">${game.gtitle}</a>
     </div>`
 }
 
