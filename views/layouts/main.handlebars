@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-neutral-200">
     <div>
-        <header class="bg-slate-800">
+        <header class="bg-blue-800">
             {{#if logged_in}}
             <nav class="flex items-end justify-between text-gray-300 pb-4">
-                <div class="text-slate-800">helloooooooooooooooooo</div>
+                <div class="invisible">hellooooooooooooooooooo</div>
                 <h1 class="text-6xl ">
                     Game Deals
                 </h1>
@@ -27,7 +27,7 @@
                 
                 {{#if logged_in}}
                 <div class="pr-3 text-lg">
-                    <a href="/">Home</a>
+                    <a href="/">Home</a> |
                     <a href="/favorites">Favorites</a> |
                     <button class="btn" id="logout">Logout</button>
                 </div>

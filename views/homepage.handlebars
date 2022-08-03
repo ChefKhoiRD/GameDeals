@@ -17,14 +17,13 @@
 
 {{#if games.length}}
 {{#each games as |game|}}
-<div>
-    <div>
-        <p>
-            <img {{game.thumb}}>
-        </p>
-        <p>
-            <a href="/search/{{game.id}}">{{game.title}}></a>
-        </p>
+<div class="flex flex-col items-center justify-center">
+    <img src="{{game.thumb}}"
+    class="p-1 border rounded object-scale-down h-20 w-20"
+    alt="thumbnail for game image">
+        
+    <div class="pb-5 text-4xl">
+        <a href="/search/{{game.id}}">{{game.title}}</a>
     </div>
 </div>
 {{/each}}

@@ -1,17 +1,16 @@
-<div class="row">
-    <div class="col">
-        <div>
-            <p>
-                <img {{game.thumb}}>
-            </p>
-            <p>
-                <a href="./favorites/{{game.id}}">{{game.title}}></a>
-            </p>
-        </div>
-        <div class="col">
-            <button class="btn btn-sm btn-danger" data-id="{{game.id}}">DELETE</button>
-        </div>
+<div class="flex flex-col items-center justify-center">
+    
+    <img src="{{game.thumb}}"
+    class="p-1 bg-yellow-300 border rounded max-w-sm"
+    alt="thumbnail for game">
+    
+    <div class="pb-5 text-5xl">
+        <a href="/search/{{game.id}}">{{game.title}}</a>
+    </div>
+    <div>
+        <button data-id="{{game.id}}" type='submint' class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">DELETE</button>
     </div>
 </div>
 
-<script src="/GameDeals/public/js/search.js"></script>
+
+<script src="./js/search.js"></script>
