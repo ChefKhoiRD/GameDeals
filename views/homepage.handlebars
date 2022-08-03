@@ -6,9 +6,9 @@
 
 <div>
     <div class="flex justify-center border-red-500">
-        <form class="form search-game-form ">
+        <form class="form search-game-form" id="game-search">
             <div>
-                <input class="form-input bg-gray-200 border-2 py-1 border-black" type="text" name="game-search" placeholder="Search" />
+                <input class="form-input bg-gray-200 border-2 py-1 border-black" type="text" name="game-search" placeholder="Search" id="game-title" />
                 <button type="submit"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Submit</button>
             </div>
         </form>
@@ -29,3 +29,5 @@
 </div>
 {{/each}}
 {{/if}}
+
+<script src="./js/search.js"></script>

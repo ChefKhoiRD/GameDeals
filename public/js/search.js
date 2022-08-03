@@ -1,7 +1,8 @@
 const searchTitle = async (event) => {
     event.preventDefault();
+    console.log("Checkpoint");
 
-    const gameTitle = document.querySelector('#').ariaValueMax.trim();
+    const gameTitle = document.querySelector('#game-title').value.trim();
 
     let gameArray = [];
 
@@ -23,13 +24,12 @@ const searchTitle = async (event) => {
 
         const game = gameArray.map((game) => game.get({ plain: true }));
 
-        res.render('homepage', {
-            game,
-            logged_in: req.session.logged_in
-        });
+        game = Handlebars.compile(game);
     } catch (err) {
         console.log(err);
     }
 }
 
-document.querySelector('.form-input').addEventListener('submit', searchTitle);
+document
+    .querySelector('#game-search')
+    .addEventListener('submit', searchTitle);
