@@ -3,10 +3,10 @@ const generateCard = (game) => {
     <div>
     <div>
         <p>
-            <img ${game.thumb}>
+            <img src='${game.thumb}'>
         </p>
         <p>
-            <a href="/search/${game.id}">${game.title}></a>
+            <a href="/search/${game.id}">${game.gtitle}></a>
         </p>
     </div>
     </div>`
@@ -23,7 +23,8 @@ const searchTitle = async (event) => {
 
     try {
         const response = await fetch(`https://www.cheapshark.com/api/1.0/games?title=${gameTitle}&limit=6`)
-        const data = response.json();
+        const data = await response.json();
+        console.log(data);
 
         for (let i = 0; i < data.length; i++) {
             let newGameTitle = data[i].internalName;
@@ -35,13 +36,15 @@ const searchTitle = async (event) => {
                 id: newGameId,
                 thumb: newThumb,
             }
+            console.log(gameArray[i])
         }
+        
 
         for (let i = 0; i < gameArray.length; i++) {
             let newCard = generateCard(gameArray[i]);
             cardArray.push(newCard);
         }
-
+        console.log(gameArray);
         $('#appendCard').append(cardArray);
         
     } catch (err) {
@@ -70,4 +73,4 @@ const searchTitleFetch = async function(event) {
 }
 document
     .querySelector('#game-search')
-    .addEventListener('submit', searchTitleFetch);
+    .addEventListener('submit', searchTitle);
