@@ -20,7 +20,10 @@ const newGameFavorite = async (event) => {
 };
 
 const destroyGameFavorite = async (event) => {
-    const gameId = event.target.getAttribute('');
+    console.log("Checkpoint");
+    const gameId = event.target.getAttribute('data-id');
+
+    console.log(gameId);
 
     const response = await fetch(`/api/game/${gameId}`, {
         method: 'DELETE',
@@ -30,8 +33,9 @@ const destroyGameFavorite = async (event) => {
         alert('Failed to delete the game from favorites');
     } else {
         console.log('Favorite Delete Okay');
+        document.location.replace('/favorites');
     }
 };
 
 document.getElementById('addFavorite').addEventListener('click', newGameFavorite);
-document.getElementById('removeFavorite').addEventListener('click', destroyGameFavorite);
+document.querySelector('.removeFavorite').addEventListener('onclick', destroyGameFavorite);
