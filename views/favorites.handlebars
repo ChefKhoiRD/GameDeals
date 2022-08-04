@@ -1,16 +1,16 @@
 <div class="flex flex-col items-center justify-center">
     
-    <img src="{{game.thumb}}"
+    <img src="{{this.thumb}}"
     class="p-1 bg-yellow-300 border rounded max-w-sm"
     alt="thumbnail for game">
     
     <div class="pb-5 text-5xl">
-        <a href="/search/{{game.id}}">{{game.title}}</a>
+        <a href="/search/{{this.id}}">{{this.gtitle}}</a>
     </div>
     <div>
-        <button data-id="{{game.id}}" type='submint' class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">DELETE</button>
+        <button data-id="{{this.id}}" type='submit' class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" id="removeFavorite">DELETE</button>
     </div>
 </div>
 
-
 <script src="./js/search.js"></script>
+<script src="./js/favorites.js"></script>

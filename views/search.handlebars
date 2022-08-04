@@ -1,14 +1,14 @@
 <div class="flex flex-col items-center justify-center">
     
-    <img src="{{game.thumb}}"
+    <img src="{{this.thumb}}"
     class="p-1 bg-yellow-300 border rounded max-w-sm"
     alt="thumbnail for game">
     
     <div class="pb-5 text-5xl">
-        <h2>game title</h2>
+        <h2>{{this.gtitle}}</h2>
     </div>
     <div>
-        <button type='submint' class="bg-yellow-300 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded">Add to Favorites</button>
+        <button type='button' class="bg-yellow-300 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded" id="addFavorite">Add to Favorites</button>
     </div>
 </div>
 
@@ -23,16 +23,19 @@
         <tbody>
             <tr class="font-bold py-2 px-4 border-b border-1 text-left hover:bg-white">
                 <td>Steam</td>
-                <td>{{game.steamPrice}}</td>
+                <td>{{this.steamPrice}}</td>
             </tr>
             <tr class="font-bold py-2 px-4 border-b border-1 text-left hover:bg-white">
                 <td >Humble Store</td>
-                <td{{game.humblePrice}}</td>
+                <td>{{this.humblePrice}}</td>
             </tr>
             <tr class="font-bold py-2 px-4 border-b border-1 text-left hover:bg-white">
                 <td>GOG</td>
-                <td>{{game.gogPrice}}</td>
+                <td>{{this.gogPrice}}</td>
             </tr>
         </tbody>
     </table>
 </div>
+
+<script src='../js/search.js'></script>
+<script src='../js/favorites.js'></script>

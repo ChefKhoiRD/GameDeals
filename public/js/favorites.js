@@ -1,16 +1,16 @@
 const newGameFavorite = async (event) => {
-    event.preventDefault();
+    const gameId = window.location.href.replace('http://localhost:8000/search/', "");
 
-    const gameTitle = docuemnt.querySelector('#game-title');
-    const gameId = document.querySelector('#game-Id');
+    console.log(gameId);
+    
 
-    const response = await fetch('/api/game', {
+    var response = await fetch('/api/game', {
         method: 'POST',
-        body: JSON.stringify({ gameId }),
+        body: JSON.stringify({ game_id: gameId }),
         headers: {
             'Content-Type': 'application/json',
         },
-    });
+    })
 
     if(!response.ok) {
         alert('Failed to save the game to favorites');
@@ -33,5 +33,5 @@ const destroyGameFavorite = async (event) => {
     }
 };
 
-document.querySelector('#addFavorite').addEventListener('click', newGameFavorite);
-document.querySelector('').addEventListener('click', destroyGameFavorite);
+document.getElementById('addFavorite').addEventListener('click', newGameFavorite);
+document.getElementById('removeFavorite').addEventListener('click', destroyGameFavorite);

@@ -62,8 +62,12 @@ const searchTitleFetch = async function(event) {
                 'Content-Type': 'application/json',
               },          
         })
-        var data = response.json();
-        console.log(data);
+        
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            console.log('Error with put')
+        }
     } catch (err) {
         console.log(err);
     }

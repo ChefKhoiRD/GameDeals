@@ -14,7 +14,20 @@
         </form>
     </div>
 </div>
-
+{{!-- {{#if games.length}} --}}
+{{#each games}}
+<div class="flex flex-col items-center justify-center" id="appendCard">
+    <img src="{{this.thumb}}"
+    class="p-1 border rounded object-scale-down h-20 w-20"
+    alt="thumbnail for game image">
+        
+    <div class="pb-5 text-4xl">
+        <a href="/search/{{this.id}}">{{this.gtitle}}</a>
+    </div>
+</div>
+{{/each}}
+{{!-- {{/if}} --}}
+=======
 <div class="flex flex-col items-center justify-center" id="appendCard">
 
 <script
