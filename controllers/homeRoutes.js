@@ -8,21 +8,21 @@ let games = [];
 // Homepage GET request
 router.get('/', withAuth, async (req, res) => {
   try {
-    const gameData = await User.findOne({ where: { id: req.session.user_id }});
+    var gameData = await User.findOne({ where: { id: req.session.user_id }});
 
-    let gameTitle = gameData.last_search;
+    var gameTitle = gameData.last_search;
 
     console.log(gameTitle);
 
-    const response = await fetch(`https://www.cheapshark.com/api/1.0/games?title=${gameTitle}&limit=6`)
-    const data = await response.json();
+    var response = await fetch(`https://www.cheapshark.com/api/1.0/games?title=${gameTitle}&limit=6`)
+    var data = await response.json();
 
     console.log(data)
 
     for (let i = 0; i < data.length; i++) {
-        let newGameTitle = data[i].external;
-        let newGameId = data[i].gameID;
-        let newThumb = data[i].thumb;
+        var newGameTitle = data[i].external;
+        var newGameId = data[i].gameID;
+        var newThumb = data[i].thumb;
     
         games[i] = {
             gtitle: newGameTitle,
@@ -50,8 +50,8 @@ router.get('/search/:id', withAuth, async (req, res) => {
   try {
     var gameId = req.params.id;
     console.log(gameId);
-    const response = await fetch(`https://www.cheapshark.com/api/1.0/games?id=${gameId}`)
-    const data = await response.json();
+    var response = await fetch(`https://www.cheapshark.com/api/1.0/games?id=${gameId}`)
+    var data = await response.json();
 
     var games = [{}];
 
@@ -87,7 +87,7 @@ router.get('/search/:id', withAuth, async (req, res) => {
 // Favorites GET request
 router.get('/favorites', withAuth, async (req, res) => {
   try {
-    const gameData = await Game.findAll({
+    var gameData = await Game.findAll({
       include: [
         {
           model: User,
@@ -95,18 +95,16 @@ router.get('/favorites', withAuth, async (req, res) => {
         },
       ],
     });
-    const gameMap = await gameData.map((game) => 
+    var gameMap = await gameData.map((game) => 
       game.get({ plain: true })
     );
 
+    var games = [{}];
     console.log(gameMap[0].game_id);
-    var games = [{}]
 
-    for (let i = 0; gameMap.length; i++) {
-    const response = await fetch(`https://www.cheapshark.com/api/1.0/games?id=${gameMap[i].game_id}`)
-    const data = await response.json();
-
-    let games = [{}];
+    for (let i = 0;i < gameMap.length; i++) {
+    var response = await fetch(`https://www.cheapshark.com/api/1.0/games?id=${gameMap[i].game_id}`)
+    var data = await response.json();
 
     games[i] = {
       gtitle: data.info.title,

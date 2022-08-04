@@ -1,16 +1,18 @@
-<div class="flex flex-col items-center justify-center">
-    
+<div class="removeFavorite">
+{{#each games}} 
+<div class="flex flex-col items-center justify-center pb-4">
+  
     <img src="{{this.thumb}}"
     class="p-1 bg-yellow-300 border rounded max-w-sm"
     alt="thumbnail for game">
     
-    <div class="pb-5 text-5xl">
+    <div class="pb-4 text-5xl">
         <a href="/search/{{this.id}}">{{this.gtitle}}</a>
     </div>
     <div>
-        <button data-id="{{this.id}}" type='submit' class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" id="removeFavorite">DELETE</button>
+        <button class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" data-id="{{this.id}}">DELETE</button>
     </div>
 </div>
-
-<script src="./js/search.js"></script>
+{{/each}}
+</div>
 <script src="./js/favorites.js"></script>

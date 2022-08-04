@@ -74,4 +74,4 @@ const searchTitleFetch = async function(event) {
 }
 document
     .querySelector('#game-search')
-    .addEventListener('submit', searchTitle);
+    .addEventListener('submit', searchTitleFetch);
