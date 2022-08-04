@@ -38,4 +38,4 @@ const destroyGameFavorite = async (event) => {
 };
 
 document.getElementById('addFavorite').addEventListener('click', newGameFavorite);
-document.querySelector('.removeFavorite').addEventListener('onclick', destroyGameFavorite);
+document.getElementById('remove-favorite').addEventListener('click', destroyGameFavorite);
